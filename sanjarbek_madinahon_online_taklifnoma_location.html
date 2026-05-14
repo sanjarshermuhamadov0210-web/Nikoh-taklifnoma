@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanjarbek & Madinahon | Nikoh Taklifnomasi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Montserrat',sans-serif;
+      background:#fbf6ed;
+      color:#3d3028;
+      overflow-x:hidden;
+    }
+    .hero{
+      min-height:100vh;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:28px;
+      background:
+        linear-gradient(rgba(255,250,242,.72),rgba(246,235,218,.88)),
+        url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+    }
+    .hero:before,.hero:after{
+      content:"";
+      position:absolute;
+      width:360px;height:360px;
+      border:1px solid rgba(176,141,87,.35);
+      border-radius:50%;
+      animation:float 7s ease-in-out infinite;
+    }
+    .hero:before{top:8%;left:-120px}
+    .hero:after{bottom:4%;right:-120px;animation-delay:1.5s}
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-22px)}
+    }
+    .hero-content{
+      max-width:850px;
+      position:relative;
+      z-index:2;
+      animation:fadeUp 1.4s ease forwards;
+    }
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(35px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+    .small-title{
+      letter-spacing:7px;
+      text-transform:uppercase;
+      color:#9b7a4b;
+      font-size:13px;
+      margin-bottom:20px;
+      font-weight:500;
+    }
+    .names{
+      font-family:'Great Vibes',cursive;
+      font-size:clamp(58px,12vw,130px);
+      color:#6a4d31;
+      line-height:.95;
+      text-shadow:0 8px 28px rgba(93,67,44,.15);
+    }
+    .and{
+      font-family:'Playfair Display',serif;
+      color:#b08d57;
+      font-size:.55em;
+      margin:0 8px;
+    }
+    .subtitle{
+      margin:28px auto 0;
+      max-width:640px;
+      font-family:'Playfair Display',serif;
+      font-size:clamp(20px,4vw,31px);
+      color:#5e4a3a;
+      line-height:1.45;
+    }
+    .date-pill{
+      display:inline-block;
+      margin-top:38px;
+      padding:16px 30px;
+      border:1px solid #b08d57;
+      border-radius:999px;
+      background:rgba(255,255,255,.56);
+      backdrop-filter:blur(10px);
+      box-shadow:0 18px 55px rgba(85,62,39,.16);
+      font-weight:600;
+      color:#5d422c;
+      letter-spacing:1px;
+    }
+    .scroll{
+      position:absolute;
+      bottom:24px;
+      left:50%;
+      transform:translateX(-50%);
+      color:#947448;
+      font-size:12px;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      animation:bounce 1.8s infinite;
+    }
+    @keyframes bounce{
+      0%,100%{bottom:24px}
+      50%{bottom:34px}
+    }
+    section{padding:80px 20px}
+    .card{
+      max-width:900px;
+      margin:auto;
+      background:rgba(255,255,255,.74);
+      border:1px solid rgba(188,157,105,.38);
+      border-radius:38px;
+      padding:48px 26px;
+      box-shadow:0 30px 90px rgba(72,48,28,.14);
+      backdrop-filter:blur(16px);
+      position:relative;
+      overflow:hidden;
+    }
+    .card:before{
+      content:"";
+      position:absolute;
+      inset:18px;
+      border:1px solid rgba(176,141,87,.22);
+      border-radius:30px;
+      pointer-events:none;
+    }
+    .section-title{
+      text-align:center;
+      font-family:'Playfair Display',serif;
+      font-size:clamp(35px,7vw,56px);
+      color:#6b4d31;
+      margin-bottom:34px;
+      position:relative;
+      z-index:1;
+    }
+    .invite-text{
+      position:relative;
+      z-index:1;
+      max-width:720px;
+      margin:auto;
+      text-align:center;
+      font-size:clamp(17px,3.7vw,24px);
+      line-height:1.9;
+      color:#4d4036;
+    }
+    .couple{
+      display:block;
+      font-family:'Great Vibes',cursive;
+      font-size:clamp(50px,10vw,86px);
+      color:#b08d57;
+      line-height:1.1;
+      margin:14px 0;
+    }
+    .info-grid{
+      position:relative;
+      z-index:1;
+      margin-top:46px;
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:20px;
+    }
+    .info{
+      background:#f8efe1;
+      border:1px solid rgba(176,141,87,.28);
+      border-radius:26px;
+      padding:26px 20px;
+      text-align:center;
+      box-shadow:0 16px 35px rgba(93,67,44,.08);
+    }
+    .info h3{
+      font-family:'Playfair Display',serif;
+      color:#8a683e;
+      font-size:25px;
+      margin-bottom:12px;
+    }
+    .info p{
+      line-height:1.65;
+      font-size:17px;
+    }
+    .map-box{
+      position:relative;
+      z-index:1;
+      margin-top:34px;
+      border-radius:28px;
+      overflow:hidden;
+      border:1px solid rgba(176,141,87,.35);
+      box-shadow:0 18px 45px rgba(72,48,28,.12);
+      background:#f8efe1;
+    }
+    .map-box iframe{
+      width:100%;
+      height:310px;
+      border:0;
+      display:block;
+    }
+    .map-note{
+      padding:14px 18px;
+      text-align:center;
+      color:#6b5a4c;
+      font-size:14px;
+      background:rgba(255,255,255,.55);
+    }
+    .buttons{
+      margin-top:38px;
+      display:flex;
+      gap:14px;
+      justify-content:center;
+      flex-wrap:wrap;
+      position:relative;
+      z-index:1;
+    }
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      background:#b08d57;
+      color:white;
+      padding:15px 24px;
+      border-radius:999px;
+      font-weight:600;
+      box-shadow:0 14px 35px rgba(176,141,87,.32);
+      transition:.3s;
+    }
+    .btn:hover{transform:translateY(-3px);background:#9c7847}
+    .btn.secondary{
+      background:white;
+      color:#8a683e;
+      border:1px solid #c7aa79;
+    }
+    .countdown{
+      max-width:850px;
+      margin:0 auto;
+      text-align:center;
+    }
+    .count-title{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(30px,6vw,50px);
+      color:#6b4d31;
+      margin-bottom:30px;
+    }
+    .time-boxes{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+    .time-box{
+      background:white;
+      border-radius:24px;
+      padding:22px 10px;
+      border:1px solid rgba(176,141,87,.28);
+      box-shadow:0 18px 45px rgba(72,48,28,.10);
+    }
+    .time-box span{
+      display:block;
+      font-family:'Playfair Display',serif;
+      font-size:38px;
+      color:#b08d57;
+      font-weight:700;
+    }
+    .time-box small{
+      color:#6b5a4c;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      font-size:12px;
+    }
+    .family{
+      text-align:center;
+      padding-bottom:90px;
+    }
+    .quote{
+      max-width:720px;
+      margin:0 auto 36px;
+      font-family:'Playfair Display',serif;
+      font-style:italic;
+      font-size:clamp(22px,5vw,34px);
+      line-height:1.55;
+      color:#6b5849;
+    }
+    .family-name{
+      font-family:'Great Vibes',cursive;
+      font-size:clamp(55px,10vw,90px);
+      color:#6a4d31;
+    }
+    footer{
+      text-align:center;
+      padding:28px;
+      color:#92775b;
+      border-top:1px solid rgba(176,141,87,.24);
+      background:rgba(255,255,255,.35);
+      font-size:13px;
+      letter-spacing:1px;
+    }
+    @media(max-width:720px){
+      .info-grid,.time-boxes{grid-template-columns:1fr}
+      .card{padding:42px 20px;border-radius:30px}
+      section{padding:62px 16px}
+      .small-title{letter-spacing:4px}
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="small-title">Nikoh taklifnomasi</div>
+      <h1 class="names">Sanjarbek <span class="and">&</span> Madinahon</h1>
+      <p class="subtitle">Ikki qalbning bir taqdirga aylangan eng go‘zal kuni</p>
+      <div class="date-pill">7-IYUN 2026 • SOAT 15:00</div>
+    </div>
+    <div class="scroll">Pastga suring</div>
+  </section>
+
+  <section>
+    <div class="card">
+      <h2 class="section-title">Qadrli Mehmonimiz!</h2>
+      <div class="invite-text">
+        Sizni aziz farzandlarimiz
+        <span class="couple">Sanjarbek va Madinahon</span>
+        larning nikoh marosimi munosabati bilan
+        2026-yil 7-iyun kuni soat 15:00 da
+        yoziladigan dasturxonimizga
+        samimiy taklif etamiz.
+        <br><br>
+        Quvonchli kunimizda Sizni aziz mehmon sifatida
+        ko‘rishdan xursand bo‘lamiz.
+      </div>
+
+      <div class="info-grid">
+        <div class="info">
+          <h3>Sana va vaqt</h3>
+          <p>2026-yil 7-iyun<br><b>Soat 15:00</b></p>
+        </div>
+        <div class="info">
+          <h3>Manzil</h3>
+          <p>Namangan viloyati, Uychi tumani,<br>
+            Yangi Hayot MFY,<br>
+            Baxt ko‘chasi, 44-xonadon.
+          </p>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <iframe
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=Namangan%20viloyati%20Uychi%20tumani%20Yangi%20Hayot%20MFY%20Baxt%20ko%27chasi%2044&output=embed">
+        </iframe>
+        <div class="map-note">Aniq lokatsiyani ochish uchun pastdagi tugmani bosing</div>
+      </div>
+
+      <div class="buttons">
+        <a class="btn" target="_blank" href="https://maps.app.goo.gl/5x9FgtrRxhwpptNd6">
+          Lokatsiyani Google Maps’da ochish
+        </a>
+        <a class="btn secondary" href="#countdown">To‘ygacha vaqt</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="countdown" class="countdown">
+    <h2 class="count-title">To‘ygacha qolgan vaqt</h2>
+    <div class="time-boxes">
+      <div class="time-box"><span id="days">00</span><small>Kun</small></div>
+      <div class="time-box"><span id="hours">00</span><small>Soat</small></div>
+      <div class="time-box"><span id="minutes">00</span><small>Daqiqa</small></div>
+      <div class="time-box"><span id="seconds">00</span><small>Soniya</small></div>
+    </div>
+  </section>
+
+  <section class="family">
+    <p class="quote">“Muhabbat bilan boshlangan yo‘l baxt, fayz va ezgulik bilan davom etsin.”</p>
+    <p style="font-size:22px;color:#8a683e;margin-bottom:8px;">Hurmat bilan,</p>
+    <div class="family-name">Abduraxmonovlar oilasi</div>
+  </section>
+
+  <footer>
+    Sanjarbek & Madinahon • Nikoh taklifnomasi • 2026
+  </footer>
+
+  <script>
+    const targetDate = new Date("June 7, 2026 15:00:00").getTime();
+
+    function updateCountdown(){
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if(distance <= 0){
+        document.getElementById("days").innerText = "00";
+        document.getElementById("hours").innerText = "00";
+        document.getElementById("minutes").innerText = "00";
+        document.getElementById("seconds").innerText = "00";
+        return;
+      }
+
+      document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+      document.getElementById("hours").innerText = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      document.getElementById("minutes").innerText = Math.floor((distance / (1000 * 60)) % 60);
+      document.getElementById("seconds").innerText = Math.floor((distance / 1000) % 60);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
